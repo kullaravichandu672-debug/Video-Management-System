@@ -1,3 +1,4 @@
+import { Play, PlayCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
@@ -44,19 +45,34 @@ return (
             via-transparent to-transparent"></div>
             <div className="realtive z-10 flex items-end p-8 gap-8">
                 <img 
-                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} 
+                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
                 className="rounded-lg shadow-lg w-48 hidden md:block"
                 />
 
                 <div>
-                    <h1 className="text-4xl font-boldmmd-2">{movie.title}</h1>
-                    <div>
-                        <span>⭐{movie.vote_average} </span>
+                    <h1 className="text-4xl font-bold md-2">{movie.title}</h1>
+                    <div className="flex iteams-center gap-4 mb-2">
+                        <span>⭐{movie.vote_average?.toFixed(1)} </span>
+                        <span>{movie.release_date}</span>
+                        <span>{movie.runtime} min</span>
                     </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {movie.genres.map((genre) => (
+                            <span className="bg-gray-800 px-3 py-1 rounded-full text-sm">
+                                {genre.name}
+                            </span>
+                        ))}
+                    </div>
+                    <p className="max-w-2xl text-gray-200"> {movie.overview}</p>
+                    <button className="flex justify-center items-center bg-[#e50914]
+                    text-white py-3 px-4 rounded-full cursor-pointer text-sm 
+                    md:text-base mt-2 md:mt-4">
+                    <Play className="mr-2 w-4 h-5 md:w-5 md:h-5" /> Watch Now
+                    </button>
                 </div>
-            </div>
-        </div>
-        </div>
+                </div>
+                </div>
+                </div>
         );
 };
 
