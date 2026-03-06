@@ -30,6 +30,8 @@ if (!movie) {
     );
 }
 
+console.log("Movie: ",movie)
+
 return (
 <div className="min-h-screen bg-[#181818] text-white">
     <div 
@@ -69,9 +71,77 @@ return (
                     md:text-base mt-2 md:mt-4">
                     <Play className="mr-2 w-4 h-5 md:w-5 md:h-5" /> Watch Now
                     </button>
-                </div>
-                </div>
-                </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div className="p-8 bg-[#141414] relative z-10">
+                        <h2 className="text-2xl font-semibold mb-4">Details</h2>
+                        <div className="bg-[#232323] rounded-lg shadow-lg p-6 flex flex-col 
+                        md:flex-row gap-8">
+                            <div className="flex-1">
+                                <ul className="text-gray-y-3">
+                                    <li>
+                                        <span className="font-semibold text-white">Status: </span>
+                                        <span className="ml-2 text-gray-300">{movie.status}</span>
+                                    </li>
+                                    <li>
+                                        <span className="font-semibold text-white">Release Date: </span>
+                                        <span className="ml-2 text-gray-300">{movie.release_date}</span>
+                                    </li>
+
+                                    <li>
+                                        <span className="font-semibold text-white">Original Language: </span>
+                                        <span className="ml-2 text-gray-300">
+                                            {movie?.original_language?.toUpperCase()}
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <span className="font-semibold text-white">Budget: </span>
+                                        <span className="ml-2 text-gray-300">{movie?.budget ? `$${movie.budget.toLocaleString()}` : "N/A"}</span>
+                                    </li>
+                                    <li>
+                                        <span className="font-semibold text-white">Revenue: </span>{" "}
+                                        <span className="ml-2 text-gray-300">{movie?.revenue ? `$${movie.revenue.toLocaleString()}` : "N/A"}</span>
+                                    </li>
+                                    <li>
+                                        <span className="font-semibold text-white">
+                                            Production Companies:
+                                        </span>
+                                        <span className="ml-2 text-gray-300">{movie.production_companies && movie.production_companies.length > 0
+? movie.production_companies.map((c) => c.name).join(", ")
+  : "N/A"}</span>
+  <li>
+    <li>
+                                        <span className="font-semibold text-white">
+                                            Counteries:
+                                        </span>
+                                        <span className="ml-2 text-gray-300">{movie?.production_countries && movie.production_countries.length > 0
+  ? movie.production_countries.map((c) => c.name).join(", ")
+  : "N/A"}</span>
+  <li>
+    <span className="font-semibold text-white">
+                                            Spoken Languages:
+                                        </span>
+                                        <span className="ml-2 text-gray-300">{movie?.spoken_languages && movie.spoken_languages.length > 0
+  ? movie.spoken_languages.map((l) => l.name).join(", ")
+  : "N/A"}</span>
+  </li>
+                                    </li>
+  </li>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="flex-1">
+                                <h3 clssName="font-semibold text-white mb-2"> Tagline </h3>
+                                <p className="italic text-gray-300 mb-6">{movie.tagline || "No tagline avaliable."}</p>
+                                <h3 className="font-semibold text-white mb-2"> Overview </h3>
+                                <p className="text-gray-200">{movie.overview}</p>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
         );
 };

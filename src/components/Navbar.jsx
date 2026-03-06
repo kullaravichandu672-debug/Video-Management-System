@@ -1,16 +1,13 @@
-import { Search } from 'lucide-react';
+import { Search } from "lucide-react";
 import Logo from "../assets/logo.png";
-import { Link } from 'react-router';
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <nav className="bg-black text-gray-200 flex justify-between iteams-center 
+    <nav className="bg-black text-gray-200 flex justify-between items-center 
     p-4 h-20 text-sm md:text-[15px] font-medium text-nowrap">
       <Link to={"/"}>
-      <img 
-      src= {Logo} 
-      alt="Logo" 
-      className="w-30 h-12 cursor-pointer
+      <img src={Logo} alt="Logo" className="w-30 h-12 cursor-pointer
       brightness-125"/>
       </Link>
 
