@@ -27,7 +27,10 @@ const Navbar = () => {
             <Search className="absolute top-2 right-4 w-5 h-5"/>
         </div>
         <button className="bg-[#e50914] px-3 py-2 text-white cursor-pointer">Get AI Movie Picks</button>
+
+        <Link to={"/signin"}>
         <button className="border border-[3333] py-3 px-2 cursor-pointer">Sign In</button>
+        </Link>
       </div>
     </nav>
   )

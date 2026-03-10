@@ -49,7 +49,7 @@ if (!movie) {
 return (
 <div className="min-h-screen bg-[#181818] text-white">
     <div 
-    className="realative h-[60vh] flex item-end" 
+    className="relative h-[60vh] flex item-end" 
     style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.
             backdrop_path})`,
@@ -67,13 +67,13 @@ return (
 
                 <div>
                     <h1 className="text-4xl font-bold md-2">{movie.title}</h1>
-                    <div className="flex iteams-center gap-4 mb-2">
+                    <div className="flex items-center gap-4 mb-2">
                         <span>⭐{movie.vote_average?.toFixed(1)} </span>
                         <span>{movie.release_date}</span>
                         <span>{movie.runtime} min</span>
                     </div>
                     <div className="flex flex-wrap gap-2 mb-4">
-                        {movie.genres.map((genre) => (
+                        {movie?.genres?.map((genre) => (
                             <span className="bg-gray-800 px-3 py-1 rounded-full text-sm">
                                 {genre.name}
                             </span>
