@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import CartImg from "../assets/cardimg.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useState } from 'react';
@@ -16,8 +15,7 @@ const CardList = ({ title, category }) => {
 };
 
 useEffect(() => {
-    fetch(
-        `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`, 
+    fetch(`https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`,
         options
     )
     .then(res => res.json())
@@ -30,7 +28,7 @@ useEffect(() => {
         <h2 className="pt-10 pb-5 text-lg font-medium">{title}</h2>
 
         <Swiper slidesPerView={"auto"} spaceBetween={10} className="mySwiper">
-        {data.map((item, index) =>(
+        {data.map((item,index) =>(
             <SwiperSlide key={index} className="max-w-72">
                 <Link to={`/movie/${item.id}`}>
                 <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}

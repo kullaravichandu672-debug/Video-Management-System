@@ -49,7 +49,7 @@ if (!movie) {
 return (
 <div className="min-h-screen bg-[#181818] text-white">
     <div 
-    className="relative h-[60vh] flex item-end" 
+    className="relative h-[60vh] flex items-end" 
     style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.
             backdrop_path})`,
@@ -59,14 +59,14 @@ return (
         >
             <div className="absolute inset-0 bg-gradient-to-t from-[#181818]
             via-transparent to-transparent"></div>
-            <div className="realtive z-10 flex items-end p-8 gap-8">
+            <div className="reltive z-10 flex items-end p-8 gap-8">
                 <img 
                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
                 className="rounded-lg shadow-lg w-48 hidden md:block"
                 />
 
                 <div>
-                    <h1 className="text-4xl font-bold md-2">{movie.title}</h1>
+                    <h1 className="text-4xl font-bold mb-2">{movie.title}</h1>
                     <div className="flex items-center gap-4 mb-2">
                         <span>⭐{movie.vote_average?.toFixed(1)} </span>
                         <span>{movie.release_date}</span>
@@ -151,7 +151,7 @@ return (
                                 </ul>
                             </div>
                             <div className="flex-1">
-                                <h3 clssName="font-semibold text-white mb-2"> Tagline </h3>
+                                <h3 className="font-semibold text-white mb-2"> Tagline </h3>
                                 <p className="italic text-gray-300 mb-6">{movie.tagline || "No tagline avaliable."}</p>
                                 <h3 className="font-semibold text-white mb-2"> Overview </h3>
                                 <p className="text-gray-200">{movie.overview}</p>
@@ -169,7 +169,7 @@ return (
 
                             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                                 {recommendations.slice(0, 10).map((rec) => (
-                                    <div key={rec.id} className="bd-[#232323] rounded-lg overflow_hidden hover:scale-105 transition">
+                                    <div key={rec.id} className="bg-[#232323] rounded-lg overflow_hidden hover:scale-105 transition">
                                         <Link to={`/movie/${rec.id}`}>
                                         <img src={`https://image.tmdb.org/t/p/original${rec.poster_path}`}
                                         className="w-full h-48 object-cover" 

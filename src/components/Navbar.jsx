@@ -20,7 +20,7 @@ const Navbar = () => {
         <li className="cursor-pointer hover:text-[#e50914]">New & Popular</li>
         <li className="cursor-pointer hover:text-[#e50914]">Upcoming</li>
       </ul>
-      <div className="flex iteams-center sapce-x-4 relative">
+      <div className="flex items-center sapce-x-4 relative">
         <div className="relative hidden md:inline-flex">
             <input type="text" className="bg-[#333333] px-4 py-2 rounded-full min-w-72 pr-10 outline-none" 
             placeholder="Search..."/>
@@ -29,7 +29,7 @@ const Navbar = () => {
         <button className="bg-[#e50914] px-3 py-2 text-white cursor-pointer">Get AI Movie Picks</button>
 
         <Link to={"/signin"}>
-        <button className="border border-[3333] py-3 px-2 cursor-pointer">Sign In</button>
+        <button className="border border-[#3333] py-3 px-2 cursor-pointer">Sign In</button>
         </Link>
       </div>
     </nav>
